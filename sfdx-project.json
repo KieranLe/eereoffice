@@ -5,7 +5,7 @@
       "default": true
     }
   ],
-  "name": "Project2_Dev_Team",
+  "name": "Project1_Admin",
   "namespace": "",
   "sfdcLoginUrl": "https://login.salesforce.com",
   "sourceApiVersion": "59.0"

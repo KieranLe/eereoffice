@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Midwest</fullName>
+        <default>false</default>
+        <label>Midwest</label>
+    </customValue>
+    <customValue>
+        <fullName>Northeast</fullName>
+        <default>false</default>
+        <label>Northeast</label>
+    </customValue>
+    <customValue>
+        <fullName>Southeast</fullName>
+        <default>false</default>
+        <label>Southeast</label>
+    </customValue>
+    <customValue>
+        <fullName>Southwest</fullName>
+        <default>false</default>
+        <label>Southwest</label>
+    </customValue>
+    <customValue>
+        <fullName>West</fullName>
+        <default>false</default>
+        <label>West</label>
+    </customValue>
+    <masterLabel>Region Location (GLOBAL)</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>

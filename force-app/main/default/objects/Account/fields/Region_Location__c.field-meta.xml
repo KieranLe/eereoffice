@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Region_Location__c</fullName>
+    <description>Where is the region location of the applicant.</description>
+    <externalId>false</externalId>
+    <label>Region Location</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetName>Region_Location_GLOBAL</valueSetName>
+    </valueSet>
+</CustomField>

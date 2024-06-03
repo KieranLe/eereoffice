@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ReportType xmlns="http://soap.sforce.com/2006/04/metadata">
+    <baseObject></baseObject>
+    <category>other</category>
+    <deployed>true</deployed>
+    <description>Report on program progress. Specific progress on milestones and exercises aren’t captured in this report.</description>
+    <label>Program Progress Spring &apos;24</label>
+    <sections>
+        <masterLabel>Program Progress</masterLabel>
+    </sections>
+</ReportType>

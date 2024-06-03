@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>60.0</apiVersion>
+    <assignments>
+        <name>Sum_of_Funds</name>
+        <label>Sum of Funds</label>
+        <locationX>1044</locationX>
+        <locationY>923</locationY>
+        <assignmentItems>
+            <assignToReference>fundSum</assignToReference>
+            <operator>Add</operator>
+            <value>
+                <elementReference>Loop_Retreived_Funds.Amount</elementReference>
+            </value>
+        </assignmentItems>
+        <connector>
+            <targetReference>Loop_Retreived_Funds</targetReference>
+        </connector>
+    </assignments>
+    <customErrors>
+        <name>Funds_Not_Exceeded</name>
+        <label>Funds Not Exceeded</label>
+        <locationX>925</locationX>
+        <locationY>361</locationY>
+        <customErrorMessages>
+            <errorMessage>Cannot give out funds as it would exceed the total amount of funds required in the Industry NAICS.</errorMessage>
+            <fieldSelection>Amount</fieldSelection>
+            <isFieldError>true</isFieldError>
+        </customErrorMessages>
+    </customErrors>
+    <customErrors>
+        <name>No_Amount_Filled</name>
+        <label>No Amount Filled</label>
+        <locationX>244</locationX>
+        <locationY>532</locationY>
+        <customErrorMessages>
+            <errorMessage>The Amount Funded to the applicant contract is incorrect. Please fill out the amount funded that was agreed and negotiated during the meeting.</errorMessage>
+            <fieldSelection>Amount</fieldSelection>
+            <isFieldError>true</isFieldError>
+        </customErrorMessages>
+    </customErrors>
+    <customErrors>
+        <name>No_End_Date_Filled</name>
+        <label>No End Date Filled</label>
+        <locationX>244</locationX>
+        <locationY>747</locationY>
+        <customErrorMessages>
+            <errorMessage>The Contract End Date to the applicant is empty. This is when the contract expires. Please fill out the date that was agreed and negotiated during the meeting.</errorMessage>
+            <fieldSelection>Contract_End_Date__c</fieldSelection>
+            <isFieldError>true</isFieldError>
+        </customErrorMessages>
+    </customErrors>
+    <decisions>
+        <description>Check if Amount Funded was filled out.</description>
+        <name>Check_Amount_Funded</name>
+        <label>Check Amount Funded</label>
+        <locationX>569</locationX>
+        <locationY>480</locationY>
+        <defaultConnector>
+            <targetReference>No_Amount_Filled</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>No Amount Funded</defaultConnectorLabel>
+        <rules>
+            <name>Yes</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Amount</leftValueReference>
+                <operator>GreaterThan</operator>
+                <rightValue>
+                    <numberValue>0.0</numberValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Check_End_Date</targetReference>
+            </connector>
+            <label>Yes Amount Funded</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <description>Check if End Date was filled. This is when the contract expires.</description>
+        <name>Check_End_Date</name>
+        <label>Check End Date</label>
+        <locationX>569</locationX>
+        <locationY>695</locationY>
+        <defaultConnector>
+            <targetReference>Update_Start_Date</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Yes Contract End Date</defaultConnectorLabel>
+        <rules>
+            <name>No_Contract_End_Date</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Contract_End_Date__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>true</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>No_End_Date_Filled</targetReference>
+            </connector>
+            <label>No Contract End Date</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Check_Funds_Exceeded</name>
+        <label>Check Funds Exceeded</label>
+        <locationX>811</locationX>
+        <locationY>546</locationY>
+        <defaultConnector>
+            <targetReference>Update_Remaining_Funds</targetReference>
+        </defaultConnector>
+        <defaultConnectorLabel>Funds Not Exceeded</defaultConnectorLabel>
+        <rules>
+            <name>Funds_Exceeded</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>fundSum</leftValueReference>
+                <operator>GreaterThan</operator>
+                <rightValue>
+                    <elementReference>$Record.Industry_NAICS_Code__r.Total_Amount_of_Funds__c</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Funds_Not_Exceeded</targetReference>
+            </connector>
+            <label>Funds Exceeded</label>
+        </rules>
+    </decisions>
+    <description>Set Contract Date and Amounted Funded when its in the Project Performance Stage.</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>Subtracts_Funds_From_Industry</name>
+        <dataType>Currency</dataType>
+        <expression>{!$Record.Industry_NAICS_Code__r.Total_Amount_of_Funds__c} - {!fundSum}</expression>
+        <scale>2</scale>
+    </formulas>
+    <formulas>
+        <name>Todays_Date</name>
+        <dataType>Date</dataType>
+        <expression>TODAY()</expression>
+    </formulas>
+    <interviewLabel>Set Contract Date and Amounted Funded {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Set Contract Date and Amounted Funded</label>
+    <loops>
+        <name>Loop_Retreived_Funds</name>
+        <label>Loop Retreived Funds</label>
+        <locationX>914</locationX>
+        <locationY>793</locationY>
+        <collectionReference>Retrive_Related_Funds</collectionReference>
+        <iterationOrder>Asc</iterationOrder>
+        <nextValueConnector>
+            <targetReference>Sum_of_Funds</targetReference>
+        </nextValueConnector>
+        <noMoreValuesConnector>
+            <targetReference>Check_Funds_Exceeded</targetReference>
+        </noMoreValuesConnector>
+    </loops>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordLookups>
+        <name>Retrive_Related_Funds</name>
+        <label>Retrive Related Funds</label>
+        <locationX>751</locationX>
+        <locationY>846</locationY>
+        <assignNullValuesIfNoRecordsFound>false</assignNullValuesIfNoRecordsFound>
+        <connector>
+            <targetReference>Loop_Retreived_Funds</targetReference>
+        </connector>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>Industry_NAICS_Code__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <elementReference>$Record.Industry_NAICS_Code__r.Id</elementReference>
+            </value>
+        </filters>
+        <getFirstRecordOnly>false</getFirstRecordOnly>
+        <object>Opportunity</object>
+        <queriedFields>Id</queriedFields>
+        <queriedFields>Amount</queriedFields>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordLookups>
+    <recordUpdates>
+        <name>Update_Remaining_Funds</name>
+        <label>Update Remaining Funds</label>
+        <locationX>1101</locationX>
+        <locationY>549</locationY>
+        <inputAssignments>
+            <field>Remaining_Funds__c</field>
+            <value>
+                <elementReference>Subtracts_Funds_From_Industry</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record.Industry_NAICS_Code__r</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Start_Date</name>
+        <label>Update Start Date</label>
+        <locationX>574</locationX>
+        <locationY>903</locationY>
+        <connector>
+            <targetReference>Retrive_Related_Funds</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Contract_Start_Date__c</field>
+            <value>
+                <elementReference>Todays_Date</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>451</locationX>
+        <locationY>48</locationY>
+        <connector>
+            <targetReference>Check_Amount_Funded</targetReference>
+        </connector>
+        <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>StageName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Project Performance Stage</stringValue>
+            </value>
+        </filters>
+        <object>Opportunity</object>
+        <recordTriggerType>Update</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+    <variables>
+        <name>fundSum</name>
+        <dataType>Currency</dataType>
+        <isCollection>false</isCollection>
+        <isInput>false</isInput>
+        <isOutput>false</isOutput>
+        <scale>2</scale>
+        <value>
+            <numberValue>0.0</numberValue>
+        </value>
+    </variables>
+</Flow>

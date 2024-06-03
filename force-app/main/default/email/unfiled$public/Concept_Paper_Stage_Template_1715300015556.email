@@ -1,0 +1,16 @@
+<html>
+<head>
+	<title></title>
+</head>
+<body style="height: auto; min-height: auto;">Dear {{{Recipient.Name}}},<br />
+<br />
+Thank you for submitting a Office of Energy Efficiency and Renewable Energy (EERE) application for funding to your business.<br />
+Based on the information provided in your application your likelihood of getting accepted is a {{{Recipient.Likelihood_of_Acceptance__c}}} out of 10.<br />
+<br />
+Don't be alarmed with your chances there's still an opportunity for your application to get approved.<br />
+Right now your application is in the process and getting reviewed.<br />
+A<span class="fontstyle0">nything can happen.<br />
+We will inform you if your application goes to the next stage and when further actions are required.</span><br />
+<br />
+{{{Sender.Signature}}}</body>
+</html>

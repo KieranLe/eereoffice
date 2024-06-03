@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>60.0</apiVersion>
+    <description>Create a Service Contract when an account is created that is tied to this account.</description>
+    <environments>Default</environments>
+    <interviewLabel>Create a Service Contract {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Create a Service Contract</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordCreates>
+        <description>Create Service Record with this account tied to it.</description>
+        <name>Create_Service_Record</name>
+        <label>Create Service Record</label>
+        <locationX>571</locationX>
+        <locationY>528</locationY>
+        <inputAssignments>
+            <field>Account_Name__c</field>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Amount_Funded__c</field>
+            <value>
+                <elementReference>$Record.Total_Amount_Funded__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Industry_NAICS_Code__c</field>
+            <value>
+                <elementReference>$Record.Industry_NAICS_Code__r.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Name</field>
+            <value>
+                <elementReference>$Record.Name</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Region_Location__c</field>
+            <value>
+                <elementReference>$Record.Region_Location__c</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Type_of_Work_Category__c</field>
+            <value>
+                <elementReference>$Record.Type_of_Work_Category__c</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Service_Contract__c</object>
+        <storeOutputAutomatically>true</storeOutputAutomatically>
+    </recordCreates>
+    <start>
+        <locationX>431</locationX>
+        <locationY>48</locationY>
+        <connector>
+            <targetReference>Create_Service_Record</targetReference>
+        </connector>
+        <object>Account</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Obsolete</status>
+</Flow>

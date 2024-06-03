@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Role xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseAccessLevel>Edit</caseAccessLevel>
+    <contactAccessLevel>Edit</contactAccessLevel>
+    <description>Associates of Service the U.S. Southeast Region</description>
+    <mayForecastManagerShare>false</mayForecastManagerShare>
+    <name>Associates of Service - Southeast</name>
+    <opportunityAccessLevel>Edit</opportunityAccessLevel>
+    <parentRole>Managers_of_Service_Southeast</parentRole>
+</Role>

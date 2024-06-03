@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>60.0</apiVersion>
+    <description>Revoke the funds from business and add it back to the Industry&apos;s (NAICS) total amount of funds.</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>AddRevokeFunds</name>
+        <dataType>Currency</dataType>
+        <expression>{!$Record.Industry_NAICS_Code__r.Remaining_Funds__c} + {!$Record.Amount}</expression>
+        <scale>2</scale>
+    </formulas>
+    <interviewLabel>Revoke Funds {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Revoke Funds</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordUpdates>
+        <name>Del</name>
+        <label>Set Amount Funded to 0</label>
+        <locationX>859</locationX>
+        <locationY>675</locationY>
+        <inputAssignments>
+            <field>Amount</field>
+            <value>
+                <numberValue>0.0</numberValue>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record</inputReference>
+    </recordUpdates>
+    <recordUpdates>
+        <name>Update_Industry_NAICS_Funds</name>
+        <label>Update Industry (NAICS) Funds</label>
+        <locationX>712</locationX>
+        <locationY>505</locationY>
+        <connector>
+            <targetReference>Del</targetReference>
+        </connector>
+        <inputAssignments>
+            <field>Remaining_Funds__c</field>
+            <value>
+                <elementReference>AddRevokeFunds</elementReference>
+            </value>
+        </inputAssignments>
+        <inputReference>$Record.Industry_NAICS_Code__r</inputReference>
+    </recordUpdates>
+    <start>
+        <locationX>490</locationX>
+        <locationY>47</locationY>
+        <connector>
+            <targetReference>Update_Industry_NAICS_Funds</targetReference>
+        </connector>
+        <doesRequireRecordChangedToMeetCriteria>true</doesRequireRecordChangedToMeetCriteria>
+        <filterLogic>and</filterLogic>
+        <filters>
+            <field>StageName</field>
+            <operator>EqualTo</operator>
+            <value>
+                <stringValue>Potential: Revoke Funds</stringValue>
+            </value>
+        </filters>
+        <filters>
+            <field>Send_Warning_Email__c</field>
+            <operator>EqualTo</operator>
+            <value>
+                <booleanValue>true</booleanValue>
+            </value>
+        </filters>
+        <object>Opportunity</object>
+        <recordTriggerType>Update</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>My_Buyer_Groups</fullName>
+    <columns>Name</columns>
+    <columns>Owner</columns>
+    <columns>Description</columns>
+    <filterScope>Mine</filterScope>
+    <label>My Buyer Groups</label>
+</ListView>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BusinessProcess xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Opportunity EERE Application Process</fullName>
+    <description>The fast funding application process used by DOE’s Office of Energy Efficiency and Renewable Energy (EERE) involves multiple steps.</description>
+    <isActive>true</isActive>
+    <values>
+        <fullName>Negotiation Stage</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Potential%3A Revoke Funds</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Project Performance Stage</fullName>
+        <default>false</default>
+    </values>
+</BusinessProcess>

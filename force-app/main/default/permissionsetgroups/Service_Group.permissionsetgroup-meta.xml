@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PermissionSetGroup xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>All CRED for Service Users</description>
+    <hasActivationRequired>false</hasActivationRequired>
+    <label>Service Group</label>
+    <permissionSets>Services</permissionSets>
+    <permissionSets>View_Tabs_in_EREE_App</permissionSets>
+    <status>Updated</status>
+</PermissionSetGroup>

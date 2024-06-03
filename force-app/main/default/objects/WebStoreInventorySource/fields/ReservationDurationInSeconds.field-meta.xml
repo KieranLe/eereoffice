@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>ReservationDurationInSeconds</fullName>
+    <inlineHelpText>Enter a value for the reservation time limit that&apos;s between 300 and 14400.</inlineHelpText>
+</CustomField>

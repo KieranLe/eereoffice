@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Role xmlns="http://soap.sforce.com/2006/04/metadata">
+    <caseAccessLevel>Edit</caseAccessLevel>
+    <contactAccessLevel>Edit</contactAccessLevel>
+    <description>Directors of Service the U.S. Southwest Region</description>
+    <mayForecastManagerShare>false</mayForecastManagerShare>
+    <name>Directors of Service - Southwest</name>
+    <opportunityAccessLevel>Edit</opportunityAccessLevel>
+    <parentRole>VP_of_Southwest_Region_Branch</parentRole>
+</Role>

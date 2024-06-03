@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <groupingStringEnum>FulfillmentStatusCategory</groupingStringEnum>
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>Draft</fullName>
+        <default>false</default>
+        <label>Draft</label>
+        <groupingString>DRAFT</groupingString>
+    </standardValue>
+    <standardValue>
+        <fullName>Allocated</fullName>
+        <default>false</default>
+        <label>Allocated</label>
+        <groupingString>ACTIVATED</groupingString>
+    </standardValue>
+    <standardValue>
+        <fullName>Assigned</fullName>
+        <default>false</default>
+        <label>Assigned</label>
+        <groupingString>FULFILLING</groupingString>
+    </standardValue>
+    <standardValue>
+        <fullName>Pickpack</fullName>
+        <default>false</default>
+        <label>Pickpack</label>
+        <groupingString>FULFILLING</groupingString>
+    </standardValue>
+    <standardValue>
+        <fullName>Fulfilled</fullName>
+        <default>false</default>
+        <label>Fulfilled</label>
+        <groupingString>CLOSED</groupingString>
+    </standardValue>
+    <standardValue>
+        <fullName>Cancelled</fullName>
+        <default>false</default>
+        <label>Cancelled</label>
+        <groupingString>CANCELLED</groupingString>
+    </standardValue>
+    <standardValue>
+        <fullName>Rejected</fullName>
+        <default>false</default>
+        <label>Rejected</label>
+        <groupingString>REJECTED</groupingString>
+    </standardValue>
+    <standardValue>
+        <fullName>Printed</fullName>
+        <default>false</default>
+        <label>Printed</label>
+        <groupingString>FULFILLING</groupingString>
+    </standardValue>
+    <standardValue>
+        <fullName>Pick Complete</fullName>
+        <default>false</default>
+        <label>Pick Complete</label>
+        <groupingString>FULFILLING</groupingString>
+    </standardValue>
+    <standardValue>
+        <fullName>Pack Complete</fullName>
+        <default>false</default>
+        <label>Pack Complete</label>
+        <groupingString>FULFILLING</groupingString>
+    </standardValue>
+</StandardValueSet>

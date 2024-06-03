@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>A template that tells the business that the contract expires soon.</description>
+    <encodingKey>UTF-8</encodingKey>
+    <name>Contract Expires Soon Template</name>
+    <relatedEntityType>Opportunity</relatedEntityType>
+    <style>none</style>
+    <subject>Contract Expires Soon</subject>
+    <type>custom</type>
+    <uiType>SFX</uiType>
+</EmailTemplate>

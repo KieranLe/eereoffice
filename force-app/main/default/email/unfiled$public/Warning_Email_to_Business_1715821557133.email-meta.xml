@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Email about funds may be revoked.</description>
+    <encodingKey>UTF-8</encodingKey>
+    <name>Warning Email to Business</name>
+    <relatedEntityType>Opportunity</relatedEntityType>
+    <style>none</style>
+    <subject>WARNING: Funds may be Revoked</subject>
+    <type>custom</type>
+    <uiType>SFX</uiType>
+</EmailTemplate>

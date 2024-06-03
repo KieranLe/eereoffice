@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <alerts>
+        <fullName>Applicant_Approved</fullName>
+        <description>Applicant Approved</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Email</field>
+            <type>email</type>
+        </recipients>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Congratulations_Acceptance_Email_1715637824142</template>
+    </alerts>
+    <alerts>
+        <fullName>Congratulation_Email_Alert_to_Applicant</fullName>
+        <description>Congratulation Email Alert to Applicant</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Email</field>
+            <type>email</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Congratulations_Acceptance_Email_For_Approval_Process_1715721274090</template>
+    </alerts>
+    <alerts>
+        <fullName>Congratulation_Email_Alert_to_Applicant2</fullName>
+        <description>Congratulation Email Alert to Applicant2</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Email</field>
+            <type>email</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Congratulations_Acceptance_Email_For_Approval_Process_1715721274090</template>
+    </alerts>
+    <alerts>
+        <fullName>Rejection_Email_Alert_to_Applicant</fullName>
+        <description>Rejection Email Alert to Applicant</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Email</field>
+            <type>email</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Rejected_Email_for_Approval_Process_1715721389702</template>
+    </alerts>
+    <alerts>
+        <fullName>Rejection_Email_Alert_to_Applicant2</fullName>
+        <description>Rejection Email Alert to Applicant2</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Email</field>
+            <type>email</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Rejected_Email_for_Approval_Process_1715721389702</template>
+    </alerts>
+    <alerts>
+        <fullName>Selection_Stage_Email_Alert_to_Applicant</fullName>
+        <description>Selection Stage Email Alert to Applicant</description>
+        <protected>false</protected>
+        <recipients>
+            <field>Email</field>
+            <type>email</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Selection_Stage_Template_for_Approval_Process_1715721089990</template>
+    </alerts>
+    <alerts>
+        <fullName>Selection_Stage_Email_Alert_to_Lead_Owner</fullName>
+        <description>Selection Stage Email Alert to Lead Owner</description>
+        <protected>false</protected>
+        <recipients>
+            <type>accountOwner</type>
+        </recipients>
+        <recipients>
+            <type>owner</type>
+        </recipients>
+        <senderType>CurrentUser</senderType>
+        <template>unfiled$public/Application_in_Selection_Stage_to_Lead_Owner_1715715759778</template>
+    </alerts>
+    <fieldUpdates>
+        <fullName>Change_Lead_Staus_to_Closed_Convert</fullName>
+        <description>Change the lead status to Close Converted to then be converted into an Account and Contacts</description>
+        <field>Status</field>
+        <literalValue>Closed - Converted</literalValue>
+        <name>Change Lead Staus to Closed Convert</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <fieldUpdates>
+        <fullName>Change_Lead_Staus_to_Closed_Not_Convert</fullName>
+        <description>Change the lead status to Close Not Converted.</description>
+        <field>Status</field>
+        <literalValue>Closed - Not Converted</literalValue>
+        <name>Change Lead Staus to Closed Not Convert</name>
+        <notifyAssignee>false</notifyAssignee>
+        <operation>Literal</operation>
+        <protected>false</protected>
+        <reevaluateOnChange>false</reevaluateOnChange>
+    </fieldUpdates>
+    <tasks>
+        <fullName>Modify_Lead</fullName>
+        <assignedToType>owner</assignedToType>
+        <dueDateOffset>7</dueDateOffset>
+        <notifyAssignee>false</notifyAssignee>
+        <priority>High</priority>
+        <protected>false</protected>
+        <status>Not Started</status>
+        <subject>Modify Lead</subject>
+    </tasks>
+</Workflow>

@@ -1,0 +1,16 @@
+<html>
+<head>
+	<title></title>
+</head>
+<body style="height: auto; min-height: auto;">Dear {{{Recipient.Name}}},<br />
+<br />
+Your funds may potentially be revoked due to you no longer meeting the contract requirements.<br />
+We will give you 7 days to get back on track with your requirements.<br />
+Take this time to <span class="fontstyle0">correct any issues or resolve any </span> <span class="fontstyle0">violations</span> you may have broken.<br />
+If not your funds will get revoked.<br />
+<br />
+Thank you for your understanding.<br />
+<br />
+<br />
+<span class="fontstyle0">{{{Sender.Signature}}}</span></body>
+</html>

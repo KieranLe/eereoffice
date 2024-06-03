@@ -1,0 +1,14 @@
+<html>
+<head>
+	<title></title>
+</head>
+<body style="height: auto; min-height: auto;">Dear {{{Recipient.Name}}},<br />
+<br />
+After careful consideration, we <span class="il">regret</span> to inform you that we will not be moving forward with your application at this time.<br />
+<br />
+We appreciate your understanding and the effort you put into your application.<br />
+We wish you the best of luck and hope to hear from you again as we continue to expand our funds<span class="fontstyle0">.<br />
+Thank you for your interest and time.<br />
+<br />
+{{{Sender.Signature}}}</span></body>
+</html>

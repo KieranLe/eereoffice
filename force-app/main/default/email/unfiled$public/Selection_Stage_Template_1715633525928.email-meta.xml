@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Email template to recipient about application being in this stage.</description>
+    <encodingKey>UTF-8</encodingKey>
+    <name>Selection Stage Template</name>
+    <relatedEntityType>Lead</relatedEntityType>
+    <style>none</style>
+    <subject>Application Moved to the Next Staged (Selection Stage)</subject>
+    <type>custom</type>
+    <uiType>SFX</uiType>
+</EmailTemplate>

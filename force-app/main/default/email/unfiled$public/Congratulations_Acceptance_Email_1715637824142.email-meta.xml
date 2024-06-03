@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>Congratulation Email to Applicant Acceptance</description>
+    <encodingKey>UTF-8</encodingKey>
+    <name>Congratulations Acceptance Email</name>
+    <relatedEntityType>Opportunity</relatedEntityType>
+    <style>none</style>
+    <subject>Congratulations: Application Accepted (UPDATE)</subject>
+    <type>custom</type>
+    <uiType>SFX</uiType>
+</EmailTemplate>

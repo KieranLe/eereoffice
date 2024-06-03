@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomFieldTranslation xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label></label>
+    <name>Negotiation_Project_Performance_Stage__c</name>
+    <picklistValues>
+        <masterLabel>Negotiation Stage</masterLabel>
+        <translation></translation>
+    </picklistValues>
+    <picklistValues>
+        <masterLabel>Project Performance Stage</masterLabel>
+        <translation></translation>
+    </picklistValues>
+</CustomFieldTranslation>

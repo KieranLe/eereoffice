@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>InventoryCacheTtl</fullName>
+    <inlineHelpText>Enter a value for the Inventory Cache Time To Live that&apos;s between 300 and 14400.</inlineHelpText>
+</CustomField>

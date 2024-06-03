@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Contract_End_Date_before_Start_Date</fullName>
+    <active>true</active>
+    <description>Checks whether if the contract end date was set before the start date.</description>
+    <errorConditionFormula>Contract_Start_Date__c &gt; Contract_End_Date__c</errorConditionFormula>
+    <errorDisplayField>Contract_End_Date__c</errorDisplayField>
+    <errorMessage>The contract end date can not be before the start date. Please fix the contract end date.</errorMessage>
+</ValidationRule>

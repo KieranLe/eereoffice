@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>60.0</apiVersion>
+    <description>Create an Event/Meeting with applicant to discuss the contract and the final funds that is going to be offered</description>
+    <environments>Default</environments>
+    <formulas>
+        <name>End_Date_Time</name>
+        <dataType>DateTime</dataType>
+        <expression>DATETIMEVALUE( TEXT(TODAY() + 7) + &apos; 21:00:00&apos; )</expression>
+    </formulas>
+    <formulas>
+        <name>Start_Date_Time</name>
+        <dataType>DateTime</dataType>
+        <expression>DATETIMEVALUE( TEXT(TODAY() + 7) + &apos; 20:00:00&apos; )</expression>
+    </formulas>
+    <interviewLabel>Create Event/Meeting {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Create Event/Meeting</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>FREE_FORM_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <recordCreates>
+        <description>Create a meeting with applicant.</description>
+        <name>Create_Meeting</name>
+        <label>Create Meeting</label>
+        <locationX>852</locationX>
+        <locationY>537</locationY>
+        <inputAssignments>
+            <field>EndDateTime</field>
+            <value>
+                <elementReference>End_Date_Time</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>StartDateTime</field>
+            <value>
+                <elementReference>Start_Date_Time</elementReference>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>Subject</field>
+            <value>
+                <stringValue>Meeting to Discuss Contract</stringValue>
+            </value>
+        </inputAssignments>
+        <inputAssignments>
+            <field>WhatId</field>
+            <value>
+                <elementReference>$Record.Id</elementReference>
+            </value>
+        </inputAssignments>
+        <object>Event</object>
+    </recordCreates>
+    <start>
+        <locationX>490</locationX>
+        <locationY>48</locationY>
+        <connector>
+            <targetReference>Create_Meeting</targetReference>
+        </connector>
+        <object>Opportunity</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordAfterSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

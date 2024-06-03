@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AutoResponseRules xmlns="http://soap.sforce.com/2006/04/metadata">
+    <autoResponseRule>
+        <fullName>Respond to Recipient</fullName>
+        <active>true</active>
+        <ruleEntry>
+            <senderEmail>ereeoffice@gmail.com</senderEmail>
+            <senderName>Director</senderName>
+            <template>unfiled$public/Web_to_Case_Auto_Reponse_1715896052145</template>
+        </ruleEntry>
+    </autoResponseRule>
+</AutoResponseRules>

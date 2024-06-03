@@ -1,0 +1,5 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>DefaultLanguage</fullName>
+    <inlineHelpText>The language to use when translated content isn&apos;t available. This value is configured during store creation. If you change the default language later, you must also change the default language in Experience Builder for any associated community.</inlineHelpText>
+</CustomField>

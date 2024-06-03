@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Send_Warning_Email__c</fullName>
+    <defaultValue>false</defaultValue>
+    <description>Send an Email warning the business that their funds will be revoked due to them no longer meeting the contract requirements</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Uncheck: means everything is good and the business is meeting the requirements on the contract.
+Check: means to send an email, warning the business that their funds will be revoked due to them no longer meeting the contract requirements. Will grant them 7 days to get back on track, else funds are revoked.</inlineHelpText>
+    <label>Send Warning Email</label>
+    <trackFeedHistory>false</trackFeedHistory>
+    <trackTrending>false</trackTrending>
+    <type>Checkbox</type>
+</CustomField>

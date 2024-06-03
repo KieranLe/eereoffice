@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<StandardValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <sorted>false</sorted>
+    <standardValue>
+        <fullName>Damaged Item</fullName>
+        <default>false</default>
+        <label>Damaged Item</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Missing Item or Part</fullName>
+        <default>true</default>
+        <label>Missing Item or Part</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Wrong Item</fullName>
+        <default>false</default>
+        <label>Wrong Item</label>
+    </standardValue>
+    <standardValue>
+        <fullName>Expired Warranty</fullName>
+        <default>false</default>
+        <label>Expired Warranty</label>
+    </standardValue>
+</StandardValueSet>

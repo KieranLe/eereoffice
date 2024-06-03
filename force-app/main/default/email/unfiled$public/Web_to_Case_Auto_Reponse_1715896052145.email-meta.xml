@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<EmailTemplate xmlns="http://soap.sforce.com/2006/04/metadata">
+    <available>true</available>
+    <description>An auto-reponse email to recipient</description>
+    <encodingKey>UTF-8</encodingKey>
+    <name>Web-to-Case Auto-Reponse</name>
+    <relatedEntityType>Case</relatedEntityType>
+    <style>none</style>
+    <subject>Your Case Successfully Submited: Our Team will be in Touch Soon</subject>
+    <type>custom</type>
+    <uiType>SFX</uiType>
+</EmailTemplate>

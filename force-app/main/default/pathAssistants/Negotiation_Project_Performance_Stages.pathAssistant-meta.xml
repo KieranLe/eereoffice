@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PathAssistant xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <entityName>Service_Contract__c</entityName>
+    <fieldName>Negotiation_Project_Performance_Stage__c</fieldName>
+    <masterLabel>Negotiation &amp; Project Performance Stages</masterLabel>
+    <pathAssistantSteps>
+        <fieldNames>Amount_Funded__c</fieldNames>
+        <info>&lt;p&gt;A meeting with applicants must be scheduled.&lt;/p&gt;&lt;p&gt;The final funding amounts will be set in this stage. No changes can be made after contract.&lt;/p&gt;&lt;p&gt;Ensure that funding is not allocated incorrectly&lt;/p&gt;</info>
+        <picklistValueName>Negotiation Stage</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <info>&lt;p&gt;Applicants will submit progress reports indicating what they are using the funding for.&lt;/p&gt;&lt;p&gt;Any updates with their products/services.&lt;/p&gt;&lt;p&gt;Needs to be monitored to ensure businesses stay in compliance with their contracts&lt;/p&gt;</info>
+        <picklistValueName>Project Performance Stage</picklistValueName>
+    </pathAssistantSteps>
+    <recordTypeName>__MASTER__</recordTypeName>
+</PathAssistant>

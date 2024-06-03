@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PathAssistant xmlns="http://soap.sforce.com/2006/04/metadata">
+    <active>true</active>
+    <entityName>Lead</entityName>
+    <fieldName>Status</fieldName>
+    <masterLabel>Lead EERE Application Process Path</masterLabel>
+    <pathAssistantSteps>
+        <info>&lt;p&gt;Applicants are approved and granted financial assistance.&lt;/p&gt;</info>
+        <picklistValueName>Closed - Converted</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <info>&lt;p&gt;Applicants are &lt;strong&gt;&lt;u&gt;not &lt;/u&gt;&lt;/strong&gt;approved .&lt;/p&gt;</info>
+        <picklistValueName>Closed - Not Converted</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <info>&lt;p&gt;Applicants submit concept papers.&lt;/p&gt;</info>
+        <picklistValueName>Concept Paper Stage</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <info>&lt;p&gt;Applicants submit full applicants.&lt;/p&gt;</info>
+        <picklistValueName>Full Application Stage</picklistValueName>
+    </pathAssistantSteps>
+    <pathAssistantSteps>
+        <info>&lt;p&gt;EERE deliberates and selects applications for negotiation.&lt;/p&gt;</info>
+        <picklistValueName>Selection Stage</picklistValueName>
+    </pathAssistantSteps>
+    <recordTypeName>__MASTER__</recordTypeName>
+</PathAssistant>

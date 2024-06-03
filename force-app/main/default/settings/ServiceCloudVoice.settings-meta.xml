@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ServiceCloudVoiceSettings xmlns="http://soap.sforce.com/2006/04/metadata">
+    <enableAmazonQueueManagement>false</enableAmazonQueueManagement>
+    <enableDefaultChannelForSCV>false</enableDefaultChannelForSCV>
+    <enableEndUserForSCV>false</enableEndUserForSCV>
+    <enableOmniCapacityForSCV>false</enableOmniCapacityForSCV>
+    <enableRZoneCloudVoiceOptIn>false</enableRZoneCloudVoiceOptIn>
+    <enableSCVBYOT>false</enableSCVBYOT>
+    <enableSCVSupportBannerDisplayed>false</enableSCVSupportBannerDisplayed>
+    <enableServiceCloudVoice>false</enableServiceCloudVoice>
+</ServiceCloudVoiceSettings>

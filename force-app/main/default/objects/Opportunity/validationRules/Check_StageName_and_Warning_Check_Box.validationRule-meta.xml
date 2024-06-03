@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ValidationRule xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Check_StageName_and_Warning_Check_Box</fullName>
+    <active>true</active>
+    <description>Can not revoke funds if Warning check box is not toggle true.</description>
+    <errorConditionFormula>(Send_Warning_Email__c == false) &amp;&amp;  ISPICKVAL(StageName, &apos;Potential: Revoke Funds&apos;)</errorConditionFormula>
+    <errorDisplayField>StageName</errorDisplayField>
+    <errorMessage>Can not go into Potential: Revoke Funds stage until a warning email is sent out to the business.</errorMessage>
+</ValidationRule>

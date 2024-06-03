@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<FlowDefinition xmlns="http://soap.sforce.com/2006/04/metadata">
+    <activeVersionNumber>16</activeVersionNumber>
+    <description>When a lead status is Closed the lead will be converted to Account and Contacts Automatically.
+And an Email is sent out to applicant.</description>
+    <masterLabel>Convert Lead to Account and Contacts if Accepted</masterLabel>
+</FlowDefinition>

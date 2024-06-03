@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<GlobalValueSet xmlns="http://soap.sforce.com/2006/04/metadata">
+    <customValue>
+        <fullName>Advanced Materials and Manufacturing Technologies</fullName>
+        <default>false</default>
+        <label>Advanced Materials and Manufacturing Technologies</label>
+    </customValue>
+    <customValue>
+        <fullName>Bioenergy Technologies</fullName>
+        <default>false</default>
+        <label>Bioenergy Technologies</label>
+    </customValue>
+    <customValue>
+        <fullName>Buildings</fullName>
+        <default>false</default>
+        <label>Buildings</label>
+    </customValue>
+    <customValue>
+        <fullName>Geothermal Technologies</fullName>
+        <default>false</default>
+        <label>Geothermal Technologies</label>
+    </customValue>
+    <customValue>
+        <fullName>Hydrogen and Fuel Cell Technologies</fullName>
+        <default>false</default>
+        <label>Hydrogen and Fuel Cell Technologies</label>
+    </customValue>
+    <customValue>
+        <fullName>Industrial Efficiency and Decarbonization</fullName>
+        <default>false</default>
+        <label>Industrial Efficiency and Decarbonization</label>
+    </customValue>
+    <customValue>
+        <fullName>Solar Energy Technologies</fullName>
+        <default>false</default>
+        <label>Solar Energy Technologies</label>
+    </customValue>
+    <customValue>
+        <fullName>Water Power Technologies</fullName>
+        <default>false</default>
+        <label>Water Power Technologies</label>
+    </customValue>
+    <customValue>
+        <fullName>Wind Energy Technologies</fullName>
+        <default>false</default>
+        <label>Wind Energy Technologies</label>
+    </customValue>
+    <customValue>
+        <fullName>Vehicle Technologies</fullName>
+        <default>false</default>
+        <label>Vehicle Technologies</label>
+    </customValue>
+    <masterLabel>Type of Work - Category (GLOBAL)</masterLabel>
+    <sorted>false</sorted>
+</GlobalValueSet>
