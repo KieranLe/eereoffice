@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Negotiation_Project_Performance_Stage__c</fullName>
+    <description>The rest of the stages for the business process.</description>
+    <externalId>false</externalId>
+    <label>Negotiation &amp; Project Performance Stage</label>
+    <required>false</required>
+    <trackHistory>false</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Negotiation Stage</fullName>
+                <default>true</default>
+                <label>Negotiation Stage</label>
+            </value>
+            <value>
+                <fullName>Project Performance Stage</fullName>
+                <default>false</default>
+                <label>Project Performance Stage</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

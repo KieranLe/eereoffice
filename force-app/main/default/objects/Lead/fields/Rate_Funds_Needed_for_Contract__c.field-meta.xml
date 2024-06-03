@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Rate_Funds_Needed_for_Contract__c</fullName>
+    <description>Rate the funds need for a contract on the applicants business.</description>
+    <externalId>false</externalId>
+    <formula>CASE(1,
+    IF(Funds_Asked_for_Contract__c &lt;= 10000, 1, 0), 10,
+    IF(10000&lt;Funds_Asked_for_Contract__c &amp;&amp;  Funds_Asked_for_Contract__c &lt;=250000, 1, 0), 6.66,
+    IF(250000&lt;Funds_Asked_for_Contract__c &amp;&amp; Funds_Asked_for_Contract__c &lt;=500000, 1, 0), 3.33,
+    0
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Rate the funds needed from 1 - 10.</inlineHelpText>
+    <label>Rate Funds Needed for Contract</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

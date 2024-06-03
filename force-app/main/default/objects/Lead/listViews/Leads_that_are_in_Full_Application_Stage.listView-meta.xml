@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ListView xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Leads_that_are_in_Full_Application_Stage</fullName>
+    <columns>FULL_NAME</columns>
+    <columns>LEAD.EMAIL</columns>
+    <columns>LEAD.COMPANY</columns>
+    <columns>LEAD.STATUS</columns>
+    <columns>Industry_NAICS_Code__c</columns>
+    <columns>Likelihood_of_Acceptance__c</columns>
+    <columns>LEAD.UNREAD</columns>
+    <columns>CORE.USERS.ALIAS</columns>
+    <filterScope>Mine</filterScope>
+    <filters>
+        <field>LEAD.STATUS</field>
+        <operation>equals</operation>
+        <value>Full Application Stage</value>
+    </filters>
+    <label>Leads that are in Full Application Stage</label>
+</ListView>

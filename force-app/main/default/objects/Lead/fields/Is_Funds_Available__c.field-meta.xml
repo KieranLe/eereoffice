@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Is_Funds_Available__c</fullName>
+    <description>Check if there is funds to give out</description>
+    <externalId>false</externalId>
+    <formula>CASE(1,
+    IF((Industry_NAICS_Code__r.Remaining_Funds__c  - Funds_Asked_for_Contract__c) &gt; 0, 1, 0) , 10,
+    0
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <label>Is Funds Available</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

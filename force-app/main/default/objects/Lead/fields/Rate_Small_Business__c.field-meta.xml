@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Rate_Small_Business__c</fullName>
+    <description>Scores the business whether the company meets the criteria for being a small business.</description>
+    <externalId>false</externalId>
+    <formula>CASE(1,
+    IF(AnnualRevenue&lt;=500000, 1, 0), 10,
+    IF(500000&lt;AnnualRevenue  &amp;&amp;  AnnualRevenue&lt;=1000000, 1, 0), 9,
+    IF(1000000&lt;AnnualRevenue  &amp;&amp; AnnualRevenue&lt;=1500000, 1, 0), 8,
+    IF(1500000&lt;AnnualRevenue  &amp;&amp;  AnnualRevenue&lt;=2000000, 1, 0), 7,
+    IF(2000000&lt;AnnualRevenue  &amp;&amp; AnnualRevenue&lt;=2500000, 1, 0), 6,
+    IF(2500000&lt;AnnualRevenue  &amp;&amp;  AnnualRevenue&lt;=3000000, 1, 0), 5,
+    IF(3000000&lt;AnnualRevenue  &amp;&amp; AnnualRevenue&lt;=3500000, 1, 0), 4,
+    IF(3500000&lt;AnnualRevenue  &amp;&amp;  AnnualRevenue&lt;=4000000, 1, 0), 3,
+    IF(4000000&lt;AnnualRevenue  &amp;&amp; AnnualRevenue&lt;=4500000, 1, 0), 2,
+    IF(4500000&lt;AnnualRevenue  &amp;&amp; AnnualRevenue&lt;5000000, 1, 0), 1,
+    0
+)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>Rate small business from 1 - 10.</inlineHelpText>
+    <label>Rate Small Business</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>0</scale>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

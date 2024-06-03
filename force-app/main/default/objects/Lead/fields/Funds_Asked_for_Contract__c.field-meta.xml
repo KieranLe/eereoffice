@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Funds_Asked_for_Contract__c</fullName>
+    <description>The amount of funds needed for the small business program.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>How much does the applicant need for their small business project.
+Will be in the contract.</inlineHelpText>
+    <label>Funds Asked for Contract</label>
+    <precision>18</precision>
+    <required>true</required>
+    <scale>0</scale>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Currency</type>
+</CustomField>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Type_of_Work_Category__c</fullName>
+    <description>The type of Category the applicant work does.</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Select the work category the applicant&apos;s business is in.</inlineHelpText>
+    <label>Type of Work - Category</label>
+    <required>true</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetName>Type_of_Work_Category_GLOBAL</valueSetName>
+    </valueSet>
+</CustomField>

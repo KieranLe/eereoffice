@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Likelihood_of_Acceptance__c</fullName>
+    <description>Rate the likelihood of acceptance to the program.</description>
+    <externalId>false</externalId>
+    <formula>IF(Is_Funds_Available__c &gt; 0, (Rate_Funds_Needed_for_Contract__c * 0.6) + (Rate_Small_Business__c * 0.4) , 0)</formula>
+    <formulaTreatBlanksAs>BlankAsZero</formulaTreatBlanksAs>
+    <inlineHelpText>The likelihood of application getting accepted. Scale from 1 to 10.</inlineHelpText>
+    <label>Likelihood of Acceptance</label>
+    <precision>18</precision>
+    <required>false</required>
+    <scale>1</scale>
+    <type>Number</type>
+    <unique>false</unique>
+</CustomField>

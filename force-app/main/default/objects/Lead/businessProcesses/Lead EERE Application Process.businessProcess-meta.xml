@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BusinessProcess xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Lead EERE Application Process</fullName>
+    <description>The funding application process used by DOE’s Office of Energy Efficiency and Renewable Energy (EERE) involves multiple steps.</description>
+    <isActive>true</isActive>
+    <values>
+        <fullName>Closed - Converted</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Closed - Not Converted</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Concept Paper Stage</fullName>
+        <default>true</default>
+    </values>
+    <values>
+        <fullName>Full Application Stage</fullName>
+        <default>false</default>
+    </values>
+    <values>
+        <fullName>Selection Stage</fullName>
+        <default>false</default>
+    </values>
+</BusinessProcess>
