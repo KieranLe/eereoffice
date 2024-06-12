@@ -1,0 +1,21 @@
+<template>
+    <div class="login-container">
+        <lightning-card class="slds-align_absolute-center" title="" > 
+            <div>
+                <img src={logoURL} class="logo">
+            </div>
+            <div class="slds-p-around_medium">
+                <lightning-input type="text" label="Username" name="username" placeholder="Enter Username" onchange={handleUsername}></lightning-input>
+                <lightning-input type="password" label="Password" name="password" placeholder="Enter Password" onchange={handlePassword}></lightning-input>
+            </div>
+    
+            <div class="slds-grid slds-wrap slds-p-around_small">
+                <lightning-button variant="brand" label="Login" onclick={handleLogin} class="slds-col slds-size_1-of-2"></lightning-button>
+                <a href="#" onclick={handleForgetPassword} class="slds-col slds-size_1-of-2 slds-text-body_small slds-m-top_x-small">Forget Password</a>
+            </div>
+    
+        </lightning-card>
+    </div>
+
+</template>
+
