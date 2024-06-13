@@ -1,9 +1,11 @@
 import { LightningElement } from 'lwc';
+import loginCheck from '@salesforce/apex/SiteLoginController.loginCheck';
 
 export default class LoginPage extends LightningElement {
 
-    username = '';
-    password = '';
+    username;
+    password;
+    errorMessage;
 
     // This is for scratch org
     logoURL = 'https://energy-power-8280-dev-ed.scratch.my.site.com/resource/1717551614000/EERE_Logo';
@@ -19,19 +21,28 @@ export default class LoginPage extends LightningElement {
         this.password = event.target.value;
     }
 
-    handleLogin( event ){
-        console.log(this.username);
-        console.log(this.password);
 
-        if( this.username == 'admin@eere.com' && this.password == 'admin'){
-            // Scratch org
-            window.location.href = "https://energy-power-8280-dev-ed.scratch.my.site.com/customerportal/";
+    async handleLogin( event ){
+        event.preventDefault();
 
-            // Production org
-            // window.location.href = "https://theofficeofenergyefficiency-dev-ed.develop.my.site.com/customerportal/";
+        try{
+            const result =  await loginCheck( {username: this.username, password: this.password} );
+
+            if( result === 'Success'){
+                this.errorMessage = '';
+                // Scratch org
+                //window.location.href = "https://energy-power-8280-dev-ed.scratch.my.site.com/customerportal/";
+                
+                // Production org
+                window.location.href ='https://energy-power-8280-dev-ed.scratch.my.site.com/customerportal'
+            } else {
+                this.errorMessage='Login Failed. Please check your Username and Password.';
+            }
+        } catch (error) {
+            this.errorMessage = 'An error occurred during login. Please try again.';
         }
-
     }
+
 
     handleForgetPassword( event ){
         event.preventDefault();

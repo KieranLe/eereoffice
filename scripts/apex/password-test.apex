@@ -1,13 +1,13 @@
 // Create account
-Account applicantacc = new Account(Name='HydroScience Technologies');
+Account applicantacc = new Account(Name='HydroScienceeee Technologies');
 insert applicantacc;
 ID applicantaccId = applicantacc.Id;
 
 // Create a new contact
 Contact applicant = new Contact(
-    FirstName = 'John',
-    LastName = 'Joseph',
-    Email = 'jjhydro@tech.com',
+    FirstName = 'Britney',
+    LastName = 'Smith',
+    Email = 'britney@smith.com',
     AccountId=applicantaccId
 );
 

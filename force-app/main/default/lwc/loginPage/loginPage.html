@@ -13,7 +13,9 @@
                 <lightning-button variant="brand" label="Login" onclick={handleLogin} class="slds-col slds-size_1-of-2"></lightning-button>
                 <a href="#" onclick={handleForgetPassword} class="slds-col slds-size_1-of-2 slds-text-body_small slds-m-top_x-small">Forget Password</a>
             </div>
-    
+            <template if:true={errorMessage} >
+                <div class="slds-text-color_error slds-align_absolute-center slds-text-body_small">{errorMessage}</div>
+            </template>
         </lightning-card>
     </div>
 

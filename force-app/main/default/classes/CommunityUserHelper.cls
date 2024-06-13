@@ -32,7 +32,9 @@ public class CommunityUserHelper {
                 insert newUser;
 
                 String password = generateTemporaryPassword();
-                System.setPassword(newUser.Id, password);
+                // System.setPassword(newUser.Id, password);
+                System.setPassword(newUser.Id, 'welcome1234');
+                System.debug('User password is: ' + password);      // show password for testing
                 //sendTemporaryPasswordEmail(newUser, password);    // we just hit the email limit
 
             } catch (Exception e) {
