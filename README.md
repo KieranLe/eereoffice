@@ -7,3 +7,6 @@
 - Reset password
 - Enter Customer Portal Page
 - Review and edit account details
+
+## Notes and Disclaimers:
+- A number of classes in the production org are not utilized in our process. All relevant classes are uploaded here.
