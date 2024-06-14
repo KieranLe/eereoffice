@@ -1,0 +1,37 @@
+<template>
+
+    
+    <lightning-card title="Files and Attachments" icon-name="standard:attach">
+        <lightning-layout vertical-align="center">
+            <lightning-layout-item padding="around-small" size="12">
+
+
+                <div class="slds-p-around_medium">
+                    <lightning-file-upload
+                        label="Upload Attachment(s)"
+                        record-id={opportunityId}
+                        
+                        name="fileUploader"
+                        accept={acceptedFormats}
+                        onuploadfinished={handleUploadFinished}
+                        multiple
+                    >
+                    </lightning-file-upload>
+                </div>
+                <template if:true={notesAttachments.length}>
+                    <lightning-datatable
+                        key-field="Id"
+                        data={notesAttachments}
+                        columns={columns}
+                        hide-checkbox-column="true">
+                    </lightning-datatable>
+                </template>
+                <template if:false={notesAttachments.length}>
+                    <p>No Notes or Attachments found for this Opportunity.</p>
+                </template>
+
+            </lightning-layout-item>
+        </lightning-layout>
+    </lightning-card>
+
+</template>

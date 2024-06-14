@@ -1,0 +1,9 @@
+.tab-indented {
+    padding-left: 60px;
+}
+.warning-message {
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #b71c1c; /* Dark red color */
+    margin: 10px 0;
+}

@@ -1,0 +1,68 @@
+<template>
+    <lightning-card title="DoE Articles">
+        <div class="slds-m-around_medium">
+            <lightning-dual-listbox 
+            label="Select the columns you want to use."
+            source-label="Available"
+            selected-label="Selected"
+            field-level-help="Select multiple options"
+            options={columnOptions}
+            onchange={handleChange}
+            class="slds-var-p-around_small"
+            >
+            </lightning-dual-listbox>
+
+            <lightning-layout vertical-align="center" >
+                <template for:each={filters} for:item="filter">
+                    <lightning-combobox
+                        key={filter.id}
+                        label="Filter By"
+                        options={propertyOptions}
+                        value={filter.property}
+                        data-id={filter.id}
+                        onchange={handleFilterPropertyChange}
+                        class="slds-var-p-around_small"
+                    >
+                    </lightning-combobox>
+
+                    <lightning-input
+                        key={filter.id}
+                        label="Filter Value"
+                        value={filter.value}
+                        data-id={filter.id}
+                        onchange={handleFilterValueChange}
+                        class="slds-var-p-around_small"
+                    >
+                    </lightning-input>
+
+                    <lightning-button
+                        key={filter.id}
+                        label="x"
+                        data-id={filter.id}
+                        onclick={handleDeleteFilter}
+                    ></lightning-button>
+                </template>
+            </lightning-layout>
+
+            <lightning-button label="Add Filter" onclick={handleAddFilter}></lightning-button>
+            <lightning-button label="Search" onclick={handleSearch}></lightning-button>
+
+            <template lwc:if={selectedColumns}>
+                <lightning-datatable
+                    key-field="id"
+                    data={filteredArticles}
+                    columns={tableColumns}
+                    hide-checkbox-column
+                    show-row-number-column
+                    class="slds-var-p-around_small"
+                >
+                </lightning-datatable>
+            </template>
+
+            <div class="slds-m-top_medium">
+                <lightning-button label="Previous" onclick={handlePrevious} disabled={isFirstPage}></lightning-button>
+                <lightning-button label="Next" onclick={handleNext} disabled={isLastPage}></lightning-button>
+            </div>
+        </div>
+    </lightning-card>
+</template>

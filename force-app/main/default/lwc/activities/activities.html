@@ -1,0 +1,108 @@
+<template>
+    <lightning-card title="My Actvity-Timeline" icon-name="standard:task">
+
+
+        <lightning-tabset>
+            <lightning-tab label="Tasks">
+                <template if:true={tasks}>
+                    <ul class="slds-timeline">
+                        <template for:each={tasks} for:item="task" >
+                            <li key={task.Id} class="slds-timeline__title tab-indented"> <!-- try: <lightning-layout-item></lightning-layout-item>-->
+                                <div>
+                                    <lightning-icon icon-name="standard:task" size="small" alternative-text="Task"></lightning-icon>
+                                    <h3>{task.Subject}</h3>
+                                    <p >{task.ActivityDate}</p>
+                                    <p>{task.Description}</p>
+                                </div>
+                                <br/>
+                            </li>
+                        </template>
+                    </ul>
+                </template>
+                <template if:true={isLoadingTasks}>
+                    <lightning-spinner alternative-text="Loading"></lightning-spinner>
+                </template>
+                <template if:true={taskError}>
+                    <p>{taskError}</p>
+                </template>
+            </lightning-tab>
+
+
+            <lightning-tab label="Events">
+                <template if:true={events}>
+                    <ul class="slds-timeline">
+                        <template for:each={events} for:item="event">
+                            <li key={event.Id} class="slds-timeline__title tab-indented">
+                                <div>
+                                    <lightning-icon icon-name="standard:event" size="small" alternative-text="Event"></lightning-icon>
+                                    <h3>{event.Subject}</h3>
+                                    <p class="slds-timeline__date">{event.ActivityDate}</p>
+                                    <p>{event.Description}</p>
+                                </div>
+                                <br/>
+                            </li>
+                        </template>
+                    </ul>
+                </template>
+                <template if:true={isLoadingEvents}>
+                    <lightning-spinner alternative-text="Loading"></lightning-spinner>
+                </template>
+                <template if:true={eventError}>
+                    <p>{eventError}</p>
+                </template>
+            </lightning-tab>
+
+
+            <lightning-tab label="Emails">
+                <template if:true={emails}>
+                    <ul class="slds-timeline">
+                        <template for:each={emails} for:item="email">
+                            <li key={email.Id} class="slds-timeline__title tab-indented">
+                                <div>
+                                    <lightning-icon icon-name="standard:email" size="small" alternative-text="Email"></lightning-icon>
+                                    <h3>{email.Subject}</h3>
+                                    <p class="slds-timeline__date">{email.CreatedDate}</p>
+                                    <p>{email.TextBody}</p>
+                                </div>
+                                <br/>
+                            </li>
+                        </template>
+                    </ul>
+                </template>
+                <template if:true={isLoadingEmails}>
+                    <lightning-spinner alternative-text="Loading"></lightning-spinner>
+                </template>
+                <template if:true={emailError}>
+                    <p>{emailError}</p>
+                </template>
+            </lightning-tab>
+
+
+            <lightning-tab label="Calls">
+                <template if:true={calls}>
+                    <ul class="slds-timeline">
+                        <template for:each={calls} for:item="call">
+                            <li key={call.Id} class="slds-timeline__title tab-indented">
+                                <div>
+                                    <lightning-icon icon-name="standard:log_a_call" size="small" alternative-text="Call"></lightning-icon>
+                                    <h3>{call.Subject}</h3>
+                                    <p class="slds-timeline__date">{call.ActivityDate}</p>
+                                    <p>{call.Description}</p>
+                                </div>
+                                <br/>
+                            </li>
+                        </template>
+                    </ul>
+                </template>
+                <template if:true={isLoadingCalls}>
+                    <lightning-spinner alternative-text="Loading"></lightning-spinner>
+                </template>
+                <template if:true={callError}>
+                    <p>{callError}</p>
+                </template>
+            </lightning-tab>
+        </lightning-tabset>
+
+
+    </lightning-card>
+</template>

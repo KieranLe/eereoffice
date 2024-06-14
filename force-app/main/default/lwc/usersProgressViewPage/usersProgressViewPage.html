@@ -1,0 +1,25 @@
+<template>
+
+    <lightning-card class="slds-m-around_medium slds-p-around_medium" icon-name="standard:account" title={cardTitle}>
+    </lightning-card>
+
+    <lightning-layout vertical-align="center"  multiple-rows>
+        
+        <lightning-layout-item size="12" padding="around-small" class="slds-m-bottom_medium">
+            <h2>Progress Bar for Application:</h2>
+            <c-progress-path record-id={recordId}></c-progress-path>
+        </lightning-layout-item> 
+
+        <lightning-layout-item size="12" padding="around-small"  class="slds-m-bottom_medium">
+            <c-related-opportunities record-id={recordId}></c-related-opportunities>
+        </lightning-layout-item>
+
+        <!--
+        <lightning-layout-item size="12">
+            <c-related-cases record-id={recordId}></c-related-cases>
+        </lightning-layout-item> -->
+
+    </lightning-layout>
+
+    
+</template>

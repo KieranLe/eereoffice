@@ -1,0 +1,52 @@
+<template>
+    <lightning-card title="Account and Contact Settings">
+        <div class="slds-p-around_medium">
+
+            <!-- Account Form -->
+            <template lwc:if={account}>
+                <lightning-record-edit-form object-api-name="Account" record-id={account.Id} onsuccess={handleSuccess} padding="around-small" vertical-align="center" class="slds-var-m-top_medium">
+                    <lightning-messages></lightning-messages>
+                    <lightning-output-field field-name="Name"></lightning-output-field>
+                    <lightning-output-field field-name="AccountNumber"></lightning-output-field>
+                    <lightning-input-field field-name="Site"></lightning-input-field>
+                    <lightning-input-field field-name="Phone"></lightning-input-field>
+                    <lightning-input-field field-name="Website"></lightning-input-field>
+                    <lightning-input-field field-name="BillingStreet"></lightning-input-field>
+                    <lightning-input-field field-name="BillingCity"></lightning-input-field>
+                    <lightning-input-field field-name="BillingState"></lightning-input-field>
+                    <lightning-input-field field-name="BillingPostalCode"></lightning-input-field>
+                    <lightning-input-field field-name="BillingCountry"></lightning-input-field>
+                    <lightning-button class="slds-m-top_medium" variant="brand" type="submit" name="update" label="Save"></lightning-button>
+                </lightning-record-edit-form>
+            </template>
+            <br/><br/><br/>
+            <!-- Contact Form -->
+            <template lwc:if={contact}>
+                <lightning-record-edit-form object-api-name="Contact" record-id={contact.Id} onsuccess={handleSuccess} padding="around-small" vertical-align="center" class="slds-var-m-top_medium">
+                    <lightning-messages></lightning-messages>
+                    <lightning-input-field field-name="FirstName"></lightning-input-field>
+                    <lightning-input-field field-name="LastName"></lightning-input-field>
+                    <lightning-input-field field-name="Email"></lightning-input-field>
+                    <lightning-input-field field-name="Phone"></lightning-input-field>
+                    <lightning-input-field field-name="Title"></lightning-input-field>
+                    <lightning-input-field field-name="Department"></lightning-input-field>
+                    <lightning-input-field field-name="Birthdate"></lightning-input-field>
+                    <lightning-input-field field-name="Phone"></lightning-input-field>
+                    <lightning-input-field field-name="MailingStreet"></lightning-input-field>
+                    <lightning-input-field field-name="MailingCity"></lightning-input-field>
+                    <lightning-input-field field-name="MailingState"></lightning-input-field>
+                    <lightning-input-field field-name="MailingPostalCode"></lightning-input-field>
+                    <lightning-input-field field-name="MailingCountry"></lightning-input-field>
+                    <lightning-button class="slds-m-top_medium" variant="brand" type="submit" name="update" label="Save"></lightning-button>
+                </lightning-record-edit-form>
+            </template>
+
+        </div>
+    </lightning-card>
+
+    <!-- Submit button message -->
+    <template if:true={showSuccessMessage}>
+        <lightning-toast message="Your information has been saved successfully." variant="success" mode="dismissable" title="Success"></lightning-toast>
+    </template>
+
+</template>

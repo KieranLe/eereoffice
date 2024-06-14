@@ -1,0 +1,96 @@
+<template>
+    
+    <lightning-card title="My Opportunities" icon-name="standard:opportunity">
+        <lightning-layout vertical-align="center">
+            <lightning-layout-item padding="around-small" size="12">
+                <template lwc:if={opportunity}>
+                    <lightning-datatable
+                        key-field="id"
+                        data={opportunity}
+                        columns={columns}
+                        hide-checkbox-column
+                    >
+                    </lightning-datatable>
+                </template>
+
+                <template lwc:elseif={error}>
+                    <p class="slds-text-color_error">{error}</p>
+                </template>
+            </lightning-layout-item>
+        </lightning-layout>
+    </lightning-card>
+
+
+    <!-- WARNING -->
+    <br/>
+    <lightning-card lwc:if={warnings} title="My Warning" icon-name="utility:warning" >
+        <lightning-layout vertical-align="center">
+            <lightning-layout-item padding="around-small" size="12" class="tab-indented" >
+
+                <template for:each={warnings} for:item="warning">
+                    <p key={warning} class="slds-text-color_error">
+                        <strong>{warning.Label}: </strong> 
+                        {warning.message}
+                        <br></br>
+                    </p>
+                </template>
+                <template lwc:if={error}>
+                    <p class="slds-text-color_error">{error}</p>
+                </template>
+
+            </lightning-layout-item>
+        </lightning-layout>
+    </lightning-card>
+    
+
+    <!-- Details/Fields -->
+    <br/>
+    <lightning-tabset variant="scoped">
+        <lightning-tab label="Details">
+            <lightning-card title="Details" icon-name="standard:panel_detail">
+                <lightning-layout vertical-align="center">
+                    <lightning-layout-item padding="around-small" size="12" class="tab-indented" >
+                        <template lwc:if={opportunity}>
+                            <template for:each={opportunityFields} for:item="field">
+                                <p key={field}>
+                                    <strong>{field.label}: </strong> 
+                                    {field.value}
+                                    <br></br>
+                                </p>
+                            </template>
+                        </template>
+                        <template lwc:if={error}>
+                            <p class="slds-text-color_error">{error}</p>
+                        </template>
+                    </lightning-layout-item>
+                </lightning-layout>
+            </lightning-card>
+        </lightning-tab>
+
+
+
+        <!-- Actvity -->
+        <lightning-tab label="Actvity">
+            <c-activities opportunity-id={opportunityId} class="tab-indented"></c-activities>
+        </lightning-tab>
+        
+
+        <!-- Notes and Attachments -->
+        <lightning-tab label="Attachments">
+            <c-opportunity-notes-attachments opportunity-id={opportunityId}></c-opportunity-notes-attachments>
+        </lightning-tab>
+
+        
+        <!-- To Do List -->
+        <lightning-tab label="My To-Do">
+            <lightning-card title="My To-Do" icon-name="standard:action_list_component">
+                <lightning-layout vertical-align="center">
+                    <lightning-layout-item padding="around-small" size="12" class="tab-indented">      
+                    </lightning-layout-item>
+                </lightning-layout>
+            </lightning-card>
+        </lightning-tab>
+
+    </lightning-tabset>
+
+</template>

@@ -1,0 +1,18 @@
+<template>
+    <lightning-card title="My Cases" icon-name="standard:document">
+        
+        <template if:true={relatedCases}>
+            <lightning-datatable
+                key-field="id"
+                data={relatedCases}
+                columns={columns}
+            >
+            </lightning-datatable>
+        </template>
+
+        <template if:true={error}>
+            <p class="slds-text-color_error">{error}</p>
+        </template>
+
+    </lightning-card>
+</template>
