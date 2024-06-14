@@ -31,21 +31,28 @@ public class CommunityUserHelper {
             try {
                 insert newUser;
 
-                String password = generateTemporaryPassword();
-                // System.setPassword(newUser.Id, password);
-                System.setPassword(newUser.Id, 'welcome1234');
-                System.debug('User password is: ' + password);      // show password for testing
-                //sendTemporaryPasswordEmail(newUser, password);    // we just hit the email limit
 
+                // Create username and password, and pass into future method for email
+                String newUserId = newUser.Id;
+
+                //String password = generateTemporaryPassword();    // uncomment this in prod
+                String password = 'welcome123';                     // remove this in prod
+
+                // Set temporary password and send email
+                sendTemporaryPasswordEmail(newUserId, password);
             } catch (Exception e) {
                 System.debug('Error creating user: ' + e.getMessage());
             }
         } 
     }
 
+
     // Sends the email for a temporary password once user is created and password set
-    public static void sendTemporaryPasswordEmail(User newUser, String password) {
+    public static void sendTemporaryPasswordEmail(String newUserId, String password) {
         try {
+            System.setPassword(newUserId, password);
+
+            /*
             // Create an email template
             Messaging.SingleEmailMessage email = new Messaging.SingleEmailMessage();
             email.setToAddresses(new String[] { newUser.Email });
@@ -59,6 +66,7 @@ public class CommunityUserHelper {
             // Send the email
             Messaging.sendEmail(new Messaging.SingleEmailMessage[] { email });
             System.debug('Email sent to: ' + newUser.Email);
+            */
 
         } catch (Exception e) {
             System.debug('Error in sendTemporaryPasswordEmail: ' + e.getMessage());

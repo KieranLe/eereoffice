@@ -7,13 +7,13 @@ export default class HeaderComponent extends LightningElement {
 
     
     // These are for testing with the scratch org
-    logoURL     = 'https://energy-power-8280-dev-ed.scratch.my.site.com/resource/1717551614000/EERE_Logo';          
-    homepageIMG = 'https://energy-power-8280-dev-ed.scratch.my.site.com/resource/1717634298000/Homepage';           
+    //logoURL     = 'https://energy-power-8280-dev-ed.scratch.my.site.com/resource/1717637222000/EERE_Logo';          
+    //homepageIMG = 'https://energy-power-8280-dev-ed.scratch.my.site.com/resource/1717637243000/Homepage';           
 
 
     // These are for the production org
-    // logoURL     = 'https://theofficeofenergyefficiency-dev-ed.develop.my.site.com/resource/1717637222000/EERE_Logo';          
-    // homepageIMG = 'https://theofficeofenergyefficiency-dev-ed.develop.my.site.com/resource/1717637243000/Homepage?';    
+    logoURL     = 'https://theofficeofenergyefficiency-dev-ed.develop.my.site.com/resource/1717637222000/EERE_Logo';          
+    homepageIMG = 'https://theofficeofenergyefficiency-dev-ed.develop.my.site.com/resource/1717637243000/Homepage';    
     
 
     get itemOneClass() {
@@ -72,10 +72,10 @@ export default class HeaderComponent extends LightningElement {
     handleLoginClick(event){
         event.preventDefault();
         // Scatch org
-        window.location.href = 'https://energy-power-8280-dev-ed.scratch.my.site.com/loginpage/';
+        //window.location.href = 'https://energy-power-8280-dev-ed.scratch.my.site.com/loginpage/';
 
         // Production
-        // window.location.href = 'https://theofficeofenergyefficiency-dev-ed.develop.my.site.com/loginpage/';
+        window.location.href = 'https://theofficeofenergyefficiency-dev-ed.develop.my.site.com/loginpage/';
     }
 
 }

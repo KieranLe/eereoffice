@@ -8,10 +8,10 @@ export default class LoginPage extends LightningElement {
     errorMessage;
 
     // This is for scratch org
-    logoURL = 'https://energy-power-8280-dev-ed.scratch.my.site.com/resource/1717551614000/EERE_Logo';
+    //logoURL = 'https://energy-power-8280-dev-ed.scratch.my.site.com/resource/1717551614000/EERE_Logo';
     
     // This is for the production org
-    // logoURL = 'https://theofficeofenergyefficiency-dev-ed.develop.my.site.com/resource/1717637222000/EERE_Logo'
+    logoURL = 'https://theofficeofenergyefficiency-dev-ed.develop.my.site.com/resource/1717637222000/EERE_Logo'
 
     handleUsername( event ){
         this.username = event.target.value;
@@ -34,7 +34,7 @@ export default class LoginPage extends LightningElement {
                 //window.location.href = "https://energy-power-8280-dev-ed.scratch.my.site.com/customerportal/";
                 
                 // Production org
-                window.location.href ='https://energy-power-8280-dev-ed.scratch.my.site.com/customerportal'
+                window.location.href ='https://theofficeofenergyefficiency-dev-ed.develop.my.site.com/customerportal'
             } else {
                 this.errorMessage='Login Failed. Please check your Username and Password.';
             }
@@ -49,10 +49,10 @@ export default class LoginPage extends LightningElement {
         console.log("Forget Password is clicked");
         
         // Scratch Org
-        window.location.href = "https://energy-power-8280-dev-ed.scratch.my.site.com/forgetpassword/";
+        //window.location.href = "https://energy-power-8280-dev-ed.scratch.my.site.com/forgetpassword/";
 
         // Production Org
-        // window.location.href = "https://theofficeofenergyefficiency-dev-ed.develop.my.site.com/resetpassword/";
+        window.location.href = "https://theofficeofenergyefficiency-dev-ed.develop.my.site.com/resetpassword/";
     }
 
 

@@ -31,10 +31,17 @@
                 <h3 class="slds-text-heading_large slds-align_absolute-center ">Why Clean Energy Matters </h3>
                 <h3 class="slds-text-heading_small slds-align_absolute-center ">Office of Energy Efficiency & Renewable Energy </h3>
                 <img src={homepageIMG} style="max-width:70%; height: auto" class="center slds-p-top_x-small"/>    
-                <div class="article-content">           
+                <div class="article-content">    
+                    <h3 class="slds-text-heading_medium slds-text-title_bold">Small Business Program Mission</h3>
+                    <p class="slds-text-body_regular"><br>
+                        Small business owners have the opportunity to provide products and services to the Office of Energy Efficiency and Renewable Energy (EERE), which helps the U.S. Department of Energy meet its clean energy mission
+                        to accelerate the research, development, demonstration, and deployment of technologies and solutions to equitably transition America to net-zero greenhouse gas emissions economy-wide by no later than 2050, 
+                        and ensure the clean energy economy benefits all Americans, creating good paying jobs for the American people—especially workers and communities impacted by the energy transition and those historically 
+                        underserved by the energy system and overburdened by pollution.
+                    </p><br>       
                     <h3 class="slds-text-heading_medium slds-text-title_bold">The Transition to a Clean Energy Economy</h3>
                     <p class="slds-text-body_regular"><br>
-                        Clean energy is important because it has the power to enhance economic growth, support energy independence, and improve the health and well-being of the American people. 
+                        Clean energy has the power to enhance economic growth, support energy independence, and improve the health and well-being of the American people. 
                         The U.S. Department of Energy's Office of Energy Efficiency and Renewable Energy (EERE) is committed to leading the nation’s transition to a clean energy economy for these reasons. Read about how EERE worked to bring clean energy to Americans nationwide in 2023.
                     </p><br>
                     <h3 class="slds-text-heading_medium slds-text-title_bold">What Is Clean Energy?</h3><br>
@@ -53,7 +60,7 @@
             </div>
             <div id="tab-default-2" class={tabTwoContentClass} role="tabpanel" aria-labelledby="tab-default-2__item">
                 <!-- This is for webToLeadForm created by Emily-->
-                <!-- <c-web-to-lead-form></c-web-to-lead-form> -->
+                <c-web-to-lead-form></c-web-to-lead-form>
 
                 <!-- Put whatever you want here for testing-->
                 <!-- <c-login-page></c-login-page> -->
@@ -63,24 +70,26 @@
                 <lightning-card title="Frequently Asked Questions" class="slds-p-around_medium">
                     <lightning-accordion allow-multiple-sections-open>
                         <lightning-accordion-section name="section1" label="I am interested in doing business with the Department of Energy (DOE). Where can I start?">
-                            <p>It is imiportant to first understand how federal contracting works, determine if your business qualifies, and decides if federal contracting 
+                            <p>It is important to first understand how federal contracting works, determine if your business qualifies, and decides if federal contracting 
                                 is right for your business. The Small Business Adminstration's (SBA) is a good place to begin.</p>
-                            <p>Please visit <a href="https://www.sba.gov/federal-contracting/contracting-guide" >Government Contracint Webpage</a> for more information</p>
+                            <p>Please visit the <a href="https://www.sba.gov/federal-contracting/contracting-guide" >Government Contracting Webpage</a> for more information.</p>
                         </lightning-accordion-section>
                         <lightning-accordion-section name="section1" label="What are the steps of Application Process?">
                             <p>Follow the Steps in the Application Process</p>
                             <!--This is for scratch org-->
-                            <img src="https://energy-power-8280-dev-ed.scratch.my.site.com/resource/1718167330000/application_process_flowchart" />
-                            <!--This is for Production org-->
                             <!-- <img src="https://energy-power-8280-dev-ed.scratch.my.site.com/resource/1718167330000/application_process_flowchart" /> -->
+                            <!--This is for Production org-->
+                             <img src="https://theofficeofenergyefficiency-dev-ed.develop.my.site.com/resource/1718223946000/application_process_flowchart" />
                         </lightning-accordion-section>
                         <lightning-accordion-section name="section2" label="What items do I need for completing the government contracting registration process?">
                             <ul>
+                                You will need to prepare information such as:
                                 <li><a href="https://www.census.gov/naics/" >NAICS</a> codes</li>
-                                <li>Busines Name</li>
+                                <li>Business Name</li>
                                 <li>Annual Revenue </li>
                                 <li>Number of Employees</li>
                                 <li>Region</li>
+                                Additionally, documents pertaining to products and services offered are recommended for 
                             </ul>
                         </lightning-accordion-section>
                         <lightning-accordion-section name="section3" label="What are NAICS Codes?">
@@ -89,7 +98,7 @@
                                 surrounding the American economy. NAICS codes are based on the industry in
                                 which a business is primarily engaged. Additionally, NAICS codes are utilized for
                                 administrative, contracting, and tax purposes. The SBA determines different
-                                business size standards for each NAICS code.</p>
+                                business size standards and funding for each NAICS code.</p>
                         </lightning-accordion-section>
                         <lightning-accordion-section name="section4" label="How do I find out more information about a particular DOE Funding Opportunity Announcement (FOA)?">
                             <p>Each FOA establishes a mailbox for interested applicants to submit questions –
@@ -110,14 +119,22 @@
                             </p> 
                         </lightning-accordion-section>
                         <lightning-accordion-section name="section5" label="How do I apply?">
-                            <p>You can start the application by navigating to the Apply tab and fill in all information.</p>
+                            <p>You can start the application process by navigating to the Apply tab and filling in all information.
+                                From there, you will receive an email with your credentials to log into our Customer Portal. 
+                                The Customer Portal is the primary hub for potential partners to view the status of their application,
+                                submit additional business information, track funding and program progress, and maintain 
+                                communication with our industry experts.
+                            </p>
                         </lightning-accordion-section>
                     </lightning-accordion>
                 </lightning-card>
 
 
             </div>
-            <div id="tab-default-4" class={tabFourContentClass} role="tabpanel" aria-labelledby="tab-default-4__item">Contact US</div>
+            <div id="tab-default-4" class={tabFourContentClass} role="tabpanel" aria-labelledby="tab-default-4__item">
+                <c-web-to-case-form></c-web-to-case-form>
+            </div>
+            
 
         </div>
     </lightning-card>
@@ -129,7 +146,7 @@
             <p>Forrestal Building</p>
             <p>1000 Independence Avenue, SW</p>
             <p>Washington, DC 20585</p>
-            <p>U.S.A</p>
+            <p>USA</p>
         </div>
 
         <div class="slds-col slds-size_1-of-3 slds-align_absolute-center slds-m-top_small">
@@ -138,9 +155,9 @@
                 
                 <!--EERE Footer Image-->
                 <!-- This is for scratch org-->
-                <p><img src="https://energy-power-8280-dev-ed.scratch.my.site.com/resource/1718167666000/eere_footer" /></p>
-                <!-- This is for Productionn org-->
                 <!-- <p><img src="https://energy-power-8280-dev-ed.scratch.my.site.com/resource/1718167666000/eere_footer" /></p> -->
+                <!-- This is for Productionn org-->
+                <p><img src="https://theofficeofenergyefficiency-dev-ed.develop.my.site.com/resource/1718223921000/eere_footer" /></p> 
 
                 
                 <ul class="slds-list_horizontal slds-align_absolute-center slds-m-top_small">
@@ -164,8 +181,8 @@
         </div>
 
         <div class="slds-col slds-size_1-of-3 slds-text-align_right">
-            <b>ABOUT OFFICE OF ENERGY EFFICIENTCY &</b>
-            <p><b>RENEWALBE ENERGY</b></p>
+            <b>ABOUT OFFICE OF ENERGY EFFICIENCY &</b>
+            <p><b>RENEWABLE ENERGY</b></p>
             <ul>
                 <li class="slds-item"><a href="#" style="color:aliceblue">Privacy Policy</a></li>
                 <li class="slds-item"><a href="#" style="color:aliceblue">Terms of Service</a></li>
