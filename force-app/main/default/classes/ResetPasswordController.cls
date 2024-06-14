@@ -16,7 +16,7 @@ public with sharing class ResetPasswordController {
             return 'Success';
 
         } catch( Exception e ) {
-            return 'Failure' + e.getMessage();
+            return 'Failure ' + e.getMessage();
         }
     }
 
