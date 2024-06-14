@@ -4,7 +4,7 @@ try {
 
     if (queryUser.size() > 0) {
         Id userId = queryUser[0].Id;
-        System.setPassword(userId, 'welcomehome1234');
+        System.setPassword(userId, 'welcomehomebuddy123');  // 8:54pm : homeishome123
         System.debug('Password successfully updated for user: ' + userId);
     } else {
         System.debug('No user found with email: ' + ouremail);

@@ -7,13 +7,14 @@ export default class LoginPage extends LightningElement {
     username;
     password;
     errorMessage;
+    //userId;
 
     // This is for scratch org
-    logoURL = 'https://energy-power-5603-dev-ed.scratch.my.site.com/resource/1718308323000/EERE_Logo';
+    // logoURL = 'https://energy-power-5603-dev-ed.scratch.my.site.com/resource/1718308323000/EERE_Logo';
 
     
     // This is for the production org
-    // logoURL = 'https://theofficeofenergyefficiency-dev-ed.develop.my.site.com/resource/1717637222000/EERE_Logo'
+    logoURL = 'https://theofficeofenergyefficiency-dev-ed.develop.my.site.com/resource/1717637222000/EERE_Logo'
 
     handleUsername( event ){
         this.username = event.target.value;
@@ -28,24 +29,24 @@ export default class LoginPage extends LightningElement {
 
         try{
             const result =  await loginCheck( {username: this.username, password: this.password} );
-
+            console.log('result of login check: ', result);
             if( result === 'Success'){
                 this.errorMessage = '';
 
                 // This is for Scratch org
-                window.location.href = "https://efficiency-ruby-5603-dev-ed.scratch.my.site.com/customerportal";
+                // window.location.href = "https://efficiency-ruby-5603-dev-ed.scratch.my.site.com/customerportal";
                 
                 // Production org
-                // window.location.href ='https://theofficeofenergyefficiency-dev-ed.develop.my.site.com/customerportal'
+                window.location.href ='https://theofficeofenergyefficiency-dev-ed.develop.my.site.com/customerportal'
 
-            } else if ( result === 'FirstLogin') {
+            } else if ( result === 'FirstLogin'){
                 this.errorMessage = '';
 
                 // Scratch Org
-                window.location.href = 'https://efficiency-ruby-5603-dev-ed.scratch.my.site.com/resetpassword';
+                // window.location.href = 'https://efficiency-ruby-5603-dev-ed.scratch.my.site.com/resetpassword'; 
 
                 // Production org
-                // window.location.href ='https://theofficeofenergyefficiency-dev-ed.develop.my.site.com/resetpassword';
+                window.location.href ='https://theofficeofenergyefficiency-dev-ed.develop.my.site.com/resetpassword';
 
             } else {
                 this.errorMessage='Login Failed. Please check your Username and Password.';
@@ -61,10 +62,10 @@ export default class LoginPage extends LightningElement {
         console.log("Forget Password is clicked");
         
         // Scratch Org
-        window.location.href = "https://efficiency-ruby-5603-dev-ed.scratch.my.site.com/resetpassword";
+        // window.location.href = "https://efficiency-ruby-5603-dev-ed.scratch.my.site.com/resetpassword";
 
         // Production Org
-        // window.location.href = "https://theofficeofenergyefficiency-dev-ed.develop.my.site.com/resetpassword/";
+        window.location.href = "https://theofficeofenergyefficiency-dev-ed.develop.my.site.com/resetpassword/";
     }
 
 

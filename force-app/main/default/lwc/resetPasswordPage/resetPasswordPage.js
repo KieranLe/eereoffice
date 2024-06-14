@@ -1,6 +1,8 @@
-import { LightningElement} from 'lwc';
+import { LightningElement, wire} from 'lwc';
 import resetPassword from '@salesforce/apex/ResetPasswordController.resetPassword';
 import Id from "@salesforce/user/Id"
+
+
 
 export default class ResetPasswordPage extends LightningElement {
 
@@ -9,7 +11,7 @@ export default class ResetPasswordPage extends LightningElement {
     confirmPassword;
     errorMessage;
     dupErrorMessage;
-    userId  = Id;
+    userId = Id;
 
     handleUsername(event){
         this.username = event.target.value;
@@ -39,16 +41,17 @@ export default class ResetPasswordPage extends LightningElement {
     async handleClick( event ){
 
         try{
-            const result = await resetPassword( {userId: this.userId, newPassword: this.newPassword });
+            const result = await resetPassword( {userName: this.username, newPassword: this.newPassword });
             console.log('Result result = ', result);
+            console.log('username: ', this.username)
             if( result === 'Success' ){
                 this.errorMessage = '';
                 
                 // Scratch org
-                window.location.href = 'https://efficiency-ruby-5603-dev-ed.scratch.my.site.com/loginPage';
+                // window.location.href = 'https://efficiency-ruby-5603-dev-ed.scratch.my.site.com/loginPage';
 
                 // Production org
-                // window.location.href ='https://theofficeofenergyefficiency-dev-ed.develop.my.site.com/loginpage';
+                window.location.href ='https://theofficeofenergyefficiency-dev-ed.develop.my.site.com/loginpage';
 
             } else {
                 this.errorMessage = 'Password reset failed. Try again';
@@ -64,4 +67,5 @@ export default class ResetPasswordPage extends LightningElement {
         // Production org
         // window.location.href = "https://theofficeofenergyefficiency-dev-ed.develop.my.site.com/loginpage/"
     }
+
 }

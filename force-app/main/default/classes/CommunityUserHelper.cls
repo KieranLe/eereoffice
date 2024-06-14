@@ -18,6 +18,11 @@ public class CommunityUserHelper {
                 Alias = (newContact.FirstName.substring(0,1) ) + (newContact.LastName.substring(0,4)),
                 CommunityNickname = (newContact.FirstName.substring(0,1) ) + (newContact.LastName.substring(0,4)),
 
+                //new
+                // Temp_Password__c = 'abc123456',
+                Temp_Password__c = generateTemporaryPassword(),
+                First_Time__c = 1,
+
                 ProfileId = communityProfile.Id,
                 ContactId = newContact.Id,
                 
@@ -34,12 +39,15 @@ public class CommunityUserHelper {
 
                 // Create username and password, and pass into future method for email
                 String newUserId = newUser.Id;
+                String tempPass = newUser.Temp_Password__c;
 
-                //String password = generateTemporaryPassword();    // uncomment this in prod
-                String password = 'welcome123';                     // remove this in prod
+                // String password = generateTemporaryPassword();    // uncomment this in prod
+                // String password = 'welcome123';                     // remove this in prod
 
                 // Set temporary password and send email
-                sendTemporaryPasswordEmail(newUserId, password);
+                // sendTemporaryPasswordEmail(newUserId, password);
+                sendTemporaryPasswordEmail(newUserId, tempPass);
+
             } catch (Exception e) {
                 System.debug('Error creating user: ' + e.getMessage());
             }
@@ -52,7 +60,8 @@ public class CommunityUserHelper {
         try {
             System.setPassword(newUserId, password);
 
-            /*
+            User newUser = [SELECT Id, FirstName, Username, Email FROM User WHERE Id= :newUserId LIMIT 1];
+            
             // Create an email template
             Messaging.SingleEmailMessage email = new Messaging.SingleEmailMessage();
             email.setToAddresses(new String[] { newUser.Email });
@@ -66,7 +75,7 @@ public class CommunityUserHelper {
             // Send the email
             Messaging.sendEmail(new Messaging.SingleEmailMessage[] { email });
             System.debug('Email sent to: ' + newUser.Email);
-            */
+            
 
         } catch (Exception e) {
             System.debug('Error in sendTemporaryPasswordEmail: ' + e.getMessage());
@@ -86,3 +95,4 @@ public class CommunityUserHelper {
     }
 
 }
+
